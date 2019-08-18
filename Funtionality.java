@@ -2,10 +2,12 @@ package com;
 import java.util.stream.*;
 import java.util.*;
 public class Funtionality {
+	Scanner sc=new Scanner(System.in);
 	static List<Records> adds(List<Records> r,Records rr) {
-		//Records rr=new Records(n,id,s);
-		r.add(rr);
-		return r;
+		List<Records> fr=new ArrayList<>(r);
+		fr.add(rr);
+		//fr.add(new Records("Amrita",46,Arrays.asList("HypoThermia","Fever")));
+		return fr;
 	}
 	static List<Records> disp(List<Records> r){
 		return r;
@@ -38,7 +40,7 @@ public class Funtionality {
 	 for( Records to : r) {
 			if(to.getPatientId()== i) {
 				to.setName(n);
-				//System.out.print(to.getName()+to.getPatientId()+to.getDiseases());
+				System.out.print(to.getName()+to.getPatientId()+to.getDiseases()+"\n");
 			}
 	 }
 	 return r;
@@ -52,9 +54,16 @@ public class Funtionality {
 				.distinct()
 				.sorted()
 				.collect(Collectors.toList());
-return d;				
-		
+return d;						
  		}
-			}
+ static List<Records> del(List<Records> r,int i){
+	 List<Records> fr=new ArrayList<>(r);
+	 fr.removeIf(t -> t.getPatientId()== i);
+	 
+	 return fr;
+ }	 
+	 
+
+}
 	
 
