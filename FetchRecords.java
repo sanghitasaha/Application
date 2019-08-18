@@ -69,7 +69,8 @@ public class FetchRecords {
 					
 			case 6:System.out.println("Alter record");
 					int k=sc.nextInt();
-					fr=fn.alter(r,k);
+					String name=sc.next();
+					fr=fn.alter(r,k,name);
 					System.out.println(fr);
 					break;
 					
